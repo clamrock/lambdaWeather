@@ -34,4 +34,4 @@ class ExampleSensor(SensorEntity):
         """Fetch new state data for the sensor.
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = 23
+        self._attr_native_value = 100

@@ -10,12 +10,16 @@ from homeassistant.const import TEMP_CELSIUS
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-
+import random
 
 def setup_platform( hass: HomeAssistant, config: ConfigType, add_entities: AddEntitiesCallback, discovery_info: DiscoveryInfoType | None = None) -> None:
     """Set up the sensor platform."""
-    name="HereItIs"
-    add_entities([lambdaWeatherSensor(name)])
+    sensors=[]
+    
+    sensors.append(lambdaWeatherSensor("SensorOne"))
+    sensors.append(lambdaWeatherSensor("SensorTwo"))
+    
+    add_entities(sensors)
 
 
 class lambdaWeatherSensor(SensorEntity):
@@ -31,4 +35,4 @@ class lambdaWeatherSensor(SensorEntity):
         """Fetch new state data for the sensor.
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = 20
+        self._attr_native_value = random.randrange(0,100)

@@ -33,7 +33,7 @@ async def example():
                                                                                                                                                                              
         apparentTemp = calculateApparent(current_temp, current_heatIndex, current_windChill)                                                                                 
                                                                                                                                                                              
-        #print("Apparent temp = {}".format(apparentTemp))
+        print("Apparent temp = {}".format(apparentTemp))
         return apparentTemp
                                                                                                                                                                              
 loop = asyncio.get_event_loop()                                                                                                                                              

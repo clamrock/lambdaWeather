@@ -35,4 +35,7 @@ class lambdaWeatherSensor(SensorEntity):
         """Fetch new state data for the sensor.
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = random.randrange(0,100)
+        loop = asyncio.get_event_loop()
+        apparentTemp = loop.run_until_complete(example())
+
+        self._attr_native_value = apparentTemp

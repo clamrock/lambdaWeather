@@ -29,12 +29,14 @@ async def example():
         current_heatIndex = nws.observation['heatIndex']                                                                                                                     
         current_windChill = nws.observation['windChill']                                                                                                                     
                                                                                                                                                                              
-        print("{}, {}, {}".format(current_temp, current_heatIndex, current_windChill))                                                                                       
+        #print("{}, {}, {}".format(current_temp, current_heatIndex, current_windChill))
                                                                                                                                                                              
         apparentTemp = calculateApparent(current_temp, current_heatIndex, current_windChill)                                                                                 
                                                                                                                                                                              
-        print("Apparent temp = {}".format(apparentTemp))                                                                                                                     
-                                                                                                                                                                             
+        #print("Apparent temp = {}".format(apparentTemp))
+        return apparentTemp
                                                                                                                                                                              
 loop = asyncio.get_event_loop()                                                                                                                                              
-loop.run_until_complete(example())
+apparentTemp = loop.run_until_complete(example())
+
+

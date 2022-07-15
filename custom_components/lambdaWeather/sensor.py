@@ -11,14 +11,10 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 import random
-<<<<<<< HEAD
 
 import asyncio
 import aiohttp
 import pynws
-=======
-from .nws import *
->>>>>>> 750a6007f8ec01a37e55a81614bee0a958ceb52e
 
 def setup_platform( hass: HomeAssistant, config: ConfigType, add_entities: AddEntitiesCallback, discovery_info: DiscoveryInfoType | None = None) -> None:
     """Set up the sensor platform."""
